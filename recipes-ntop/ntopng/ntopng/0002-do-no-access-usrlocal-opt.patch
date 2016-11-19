@@ -1,0 +1,39 @@
+diff --git a/configure.seed b/configure.seed
+index 218945b..9bedc98 100644
+--- a/configure.seed
++++ b/configure.seed
+@@ -16,20 +16,20 @@ NTOPNG_SHORT_VERSION="@SHORT_VERSION@"
+ #
+ REVISION=`git log --pretty=oneline | wc -l`
+ 
+-if test -d "/usr/local/include"; then
+-CFLAGS="${CFLAGS} -I/usr/local/include"
+-CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
+-LDFLAGS="${LDFLAGS} -L/usr/local/lib"
+-fi
+-
+-if test -d /opt/local/include; then :
+-   CFLAGS="${CFLAGS} -I/opt/local/include"
+-   CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
+-fi
+-
+-if test -d /opt/local/lib; then :
+-  LDFLAGS="${LDFLAGS} -L/opt/local/lib"
+-fi
++#if test -d "/usr/local/include"; then
++#CFLAGS="${CFLAGS} -I/usr/local/include"
++#CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
++#LDFLAGS="${LDFLAGS} -L/usr/local/lib"
++#fi
++
++#if test -d /opt/local/include; then :
++#   CFLAGS="${CFLAGS} -I/opt/local/include"
++#   CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
++#fi
++
++#if test -d /opt/local/lib; then :
++#  LDFLAGS="${LDFLAGS} -L/opt/local/lib"
++#fi
+ 
+ if [ test -f /usr/bin/lsb_release ]; then
+    CODENAME=`/usr/bin/lsb_release -c|cut -f 2`

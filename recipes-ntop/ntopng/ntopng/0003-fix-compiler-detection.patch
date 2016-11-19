@@ -1,0 +1,50 @@
+diff --git a/Makefile.in b/Makefile.in
+index 3422941..0e8fd4c 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -4,7 +4,7 @@ datadir = @datadir@
+ SHELL=/bin/sh
+ OS := $(shell uname -s)
+ PWD=@PWD@
+-GPP=@GPP@
++GPP=@CXX@
+ INSTALL_DIR=$(DESTDIR)$(prefix)
+ MAN_DIR=$(DESTDIR)@MAN_DIR@
+ 
+diff --git a/configure.seed b/configure.seed
+index 218945b..db641e4 100644
+--- a/configure.seed
++++ b/configure.seed
+@@ -4,6 +4,8 @@ dnl> Do not add anything above
+ 
+ AC_PROG_CPP
+ 
++AC_PROG_CXX
++
+ dnl> Add /usr/local/ /opt/local
+ CFLAGS="-I${PWD} -I${PWD}/include"
+ CPPFLAGS="${CPPFLAGS} -I${PWD} -I${PWD}/include"
+@@ -354,14 +356,6 @@ then
+ 	GMAKE="make"
+ fi
+ 
+-GPP=`which clang++`
+-if test x$GPP = x
+-then
+-	GPP="g++"
+-else
+-	GPP="$GPP -O0"
+-fi
+-
+ GIT=`which git`
+ if test x$GIT = x
+ then
+@@ -407,7 +401,7 @@ AC_SUBST(LINK_OPTS)
+ AC_SUBST(GEOIP_LIB)
+ AC_SUBST(SQLITE_LIB)
+ AC_SUBST(GMAKE)
+-AC_SUBST(GPP)
++AC_SUBST(GXX)
+ AC_SUBST(CFLAGS)
+ AC_SUBST(CXXFLAGS)
+ AC_SUBST(CPPFLAGS)

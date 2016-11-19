@@ -1,0 +1,24 @@
+diff --git a/configure.seed b/configure.seed
+index 218945b..368d71e 100644
+--- a/configure.seed
++++ b/configure.seed
+@@ -142,13 +142,13 @@ fi
+ 
+ DATE=`date +"%Y-%m-%d"`
+ 
+-if test -d "/usr/include/hiredis"; then
+- AC_DEFINE_UNQUOTED(HAVE_HIREDIS, 1, [Local hiredis package present])
+- HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
+- HIREDIS_LIB="`pkg-config --libs hiredis` -lhiredis"
+-else
++#if test -d "/usr/include/hiredis"; then
++# AC_DEFINE_UNQUOTED(HAVE_HIREDIS, 1, [Local hiredis package present])
++# HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
++# HIREDIS_LIB="`pkg-config --libs hiredis` -lhiredis"
++#else
+  HIREDIS_INC="-I ${PWD}/third-party/hiredis"
+-fi
++#fi
+ 
+ PF_RING_HOME=${HOME}/PF_RING
+ if test -d ${PF_RING_HOME}; then
